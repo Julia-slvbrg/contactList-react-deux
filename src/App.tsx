@@ -1,7 +1,7 @@
-import React from 'react'
+
 
 function App() {
-  return <></>
+  return <>lista de contatos</>
 }
 
 export default App
