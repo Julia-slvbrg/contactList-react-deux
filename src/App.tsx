@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from './container/Header'
 import GlobalStyle, { Container } from './styles'
 import ContactList from './container/ContactList'
