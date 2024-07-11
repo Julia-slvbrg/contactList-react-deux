@@ -2,19 +2,37 @@ import styled from 'styled-components'
 
 export const ContactCard = styled.div`
   margin-top: 24px;
-  display: flex;
-  gap: 80px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr ;
+  gap: 2px;
   align-items: center;
-  justify-content: center;
   text-align: center;
   background-color: #cad3c8;
-  width: 72%;
-  height: 80px;
-  font-size: 18px;
+  width: 85%;
+  height: 88px;
   border-radius: 13px;
   border-bottom: 2px solid #2c3a47;
 `
+export const InfoField = styled.div`
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
+  img, input {
+    display: block;
+    text-align: center;
+    justify-self: center;
+  }
+`
+export const Input = styled.input`
+  padding: 2px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 200px;
+  background-color: #cad3c8;
+  border: none;
+`
 export const Btn = styled.button`
   margin: 0 16px;
   width: 56px;
@@ -23,4 +41,9 @@ export const Btn = styled.button`
   border-radius: 13px;
   border: none;
   cursor: pointer;
+
+  :active{
+    transform: scale(1.8);
+    transition: all ease .2s;
+  }
 `
