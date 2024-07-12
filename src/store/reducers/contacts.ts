@@ -35,6 +35,13 @@ const initialState: ContactState = {
       phone: '12 9 45791246',
       type: enums.ContactType.ALL,
       id: 4
+    },
+    {
+      name: 'Júlia',
+      email: 'julia@email.com',
+      phone: '12 9 46912467',
+      type: enums.ContactType.ALL,
+      id: 5
     }
   ]
 }
@@ -49,14 +56,30 @@ const contactSlice = createSlice({
       ]
     },
     edit: (state, action: PayloadAction<Contact>) => {
-      const contactIndex = state.itens.findIndex(contact => contact.id === action.payload.id)
+      const contactIndex = state.itens.findIndex(
+        (contact) => contact.id === action.payload.id
+      )
 
       if (contactIndex >= 0) {
         state.itens[contactIndex] = action.payload
+      }
+    },
+    changeType: (
+      state,
+      action: PayloadAction<{ id: number; isFavorite: boolean }>
+    ) => {
+      const contactIndex = state.itens.findIndex(
+        (contact) => contact.id === action.payload.id
+      )
+
+      if (contactIndex >= 0) {
+        action.payload.isFavorite
+          ? (state.itens[contactIndex].type = enums.ContactType.FAVORITE)
+          : (state.itens[contactIndex].type = enums.ContactType.ALL)
       }
     }
   }
 })
 
-export const { remove, edit } = contactSlice.actions
+export const { remove, edit, changeType } = contactSlice.actions
 export default contactSlice.reducer
