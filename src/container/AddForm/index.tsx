@@ -1,16 +1,15 @@
-import React from 'react'
+import * as S from './styles'
 
 const AddForm = () => {
   return (
-    <aside>
-      <h2>Adicione um novo contato</h2>
-      <form>
+    <S.Aside>
+      <S.Form>
         <input type="text" placeholder="Nome" />
         <input type="email" placeholder="E-mail" />
         <input type="number" placeholder="Número" />
-        <button type="submit">Adicionar</button>
-      </form>
-    </aside>
+        <S.Btn type="submit">Adicionar</S.Btn>
+      </S.Form>
+    </S.Aside>
   )
 }
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ContactCard = styled.div`
   margin-top: 24px;
   display: grid;
-  grid-template-columns: .4fr 2fr 2fr 1fr 1fr ;
+  grid-template-columns: 0.4fr 2fr 2fr 1fr 1fr;
   gap: 2px;
   align-items: center;
   text-align: center;
@@ -22,7 +22,8 @@ export const InfoField = styled.div`
   justify-content: center;
   gap: 8px;
 
-  img, input {
+  img,
+  input {
     display: block;
     text-align: center;
     justify-self: center;
@@ -45,9 +46,9 @@ export const Btn = styled.button`
   border: none;
   cursor: pointer;
 
-  :active{
+  :active {
     transform: scale(1.8);
-    transition: all ease .2s;
+    transition: all ease 0.2s;
   }
 `
 export const FavBtn = styled(Btn)`

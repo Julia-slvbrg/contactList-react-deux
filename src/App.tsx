@@ -1,16 +1,27 @@
-import Header from './container/Header'
-import GlobalStyle, { Container } from './styles'
-import ContactList from './container/ContactList'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
+import GlobalStyle, { Container } from './styles'
 import store from './store'
+import Home from './pages/Home/index.tsx'
+import AddContact from './pages/AddContact/index.tsx'
+
+const routes = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />
+  },
+  {
+    path: '/adicionar',
+    element: <AddContact />
+  }
+])
 
 function App() {
   return (
     <Provider store={store}>
       <GlobalStyle />
       <Container>
-        <Header />
-        <ContactList />
+        <RouterProvider router={routes} />
       </Container>
     </Provider>
   )

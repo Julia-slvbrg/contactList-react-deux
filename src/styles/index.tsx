@@ -14,6 +14,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 16px;
 `
 
 export default GlobalStyle
