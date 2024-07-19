@@ -10,7 +10,6 @@ export const Form = styled.form`
   gap: 12px;
   width: 600px;
 
-  input,
   button {
     height: 40px;
     width: 80%;
@@ -18,13 +17,40 @@ export const Form = styled.form`
     border: none;
     font-size: 16px;
     font-weight: bold;
-  }
-  input {
-    padding: 8px;
-    border-bottom: 1px solid #2c3a47;
+    color: #2c3a47;
   }
 `
+export const textInput = styled.input`
+  height: 40px;
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px;
+  border-bottom: 1px solid #2c3a47;
 
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+  }
+`
+export const TypeBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  gap: 24px;
+  width: 80%;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c3a47;
+`
 export const Btn = styled.button`
   background-color: #cad3c8;
   cursor: pointer;
