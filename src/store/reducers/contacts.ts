@@ -77,9 +77,23 @@ const contactSlice = createSlice({
           ? (state.itens[contactIndex].type = enums.ContactType.FAVORITE)
           : (state.itens[contactIndex].type = enums.ContactType.ALL)
       }
+    },
+    add: (state, action: PayloadAction<Omit<Contact, 'id'>>) => {
+      const contactExists = state.itens.find((contact) => contact.name.toLocaleLowerCase() === action.payload.name.toLocaleLowerCase())
+
+      if (contactExists) return alert('Já existe um contato com esse nome')
+      
+
+        const lastContact = state.itens[state.itens.length -1]
+        const newContact = {
+          ...action.payload,
+          id: lastContact? lastContact.id + 1 : 1
+        }
+
+        state.itens.push(newContact)
     }
   }
 })
 
-export const { remove, edit, changeType } = contactSlice.actions
+export const { remove, edit, changeType, add } = contactSlice.actions
 export default contactSlice.reducer
