@@ -1,7 +1,7 @@
-import AddForm from "../../container/AddForm"
-import Header from "../../container/Header"
+import AddForm from '../../container/AddForm'
+import Header from '../../container/Header'
 
-const AddContact = () =>(
+const AddContact = () => (
   <>
     <Header />
     <AddForm />
