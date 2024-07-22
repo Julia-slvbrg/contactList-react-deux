@@ -35,7 +35,7 @@ const AddForm = () => {
       name,
       email,
       formatedNumber,
-      enums.ContactType.ALL,
+      type,
       1
     )
 
