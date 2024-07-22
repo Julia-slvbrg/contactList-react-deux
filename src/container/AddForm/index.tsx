@@ -15,17 +15,31 @@ const AddForm = () => {
   const [number, setNumber] = useState('')
   const [type, setType] = useState(enums.ContactType.ALL)
 
+  let formatedNumber: string
+  function formatNumber(number: string) {
+    formatedNumber = `${number.slice(0, 2)} ${number.slice(2, 3)} ${number.slice(3)}`
+    return formatedNumber
+  }
+
   const addContact = (event: FormEvent) => {
     event.preventDefault()
+
+    if (number.length !== 11)
+      return alert(
+        'Número de telefone inválido. Insira o DDD e número do telefone'
+      )
+
+    formatNumber(number)
+
     const newContact = new Contact(
       name,
       email,
-      number,
+      formatedNumber,
       enums.ContactType.ALL,
       1
     )
 
-    const newContactObj = {...newContact}
+    const newContactObj = { ...newContact }
 
     dispatch(add(newContactObj))
     navigate('/')
@@ -34,19 +48,20 @@ const AddForm = () => {
   return (
     <S.Aside>
       <S.Form onSubmit={addContact}>
-        <S.textInput
+        <S.dataInput
           type="text"
           placeholder="Nome"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
-        <S.textInput
+        <S.dataInput
           type="email"
           placeholder="E-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <S.textInput
+        <S.dataInput
           type="number"
           placeholder="Número"
           value={number}

@@ -20,7 +20,7 @@ export const Form = styled.form`
     color: #2c3a47;
   }
 `
-export const textInput = styled.input`
+export const dataInput = styled.input`
   height: 40px;
   width: 80%;
   border-radius: 5px;
