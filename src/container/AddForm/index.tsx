@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux'
 import { FormEvent, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import * as S from './styles'
 import * as enums from '../../utils/enums/Contacts'
 import Contact from '../../models/Contact'
 import { add } from '../../store/reducers/contacts'
-import { useNavigate } from 'react-router-dom'
 
 const AddForm = () => {
   const dispatch = useDispatch()
