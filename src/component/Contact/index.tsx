@@ -81,7 +81,10 @@ const Contact = ({
 
   return (
     <S.ContactCard>
-      <S.FavBtn onClick={() => toggleFavorite()}>
+      <S.FavBtn
+        onClick={() => toggleFavorite()}
+        data-tooltip={isFavorite ? 'Desfazer' : 'Favoritar'}
+      >
         {isFavorite ? (
           <S.FavIcon src={FavoriteFill} />
         ) : (
@@ -116,25 +119,24 @@ const Contact = ({
       <span>
         {isEditing ? (
           <>
-            <S.Btn onClick={() => editContact()}>
-              <img src={Save} />
+            <S.Btn onClick={() => editContact()} data-tooltip="Salvar">
+              <img src={Save} alt="Salvar" />
             </S.Btn>
-            <S.Btn onClick={() => cancelEdit()}>
+            <S.Btn onClick={() => cancelEdit()} data-tooltip="Cancelar">
               <img src={Cancel} />
             </S.Btn>
           </>
         ) : (
           <>
-            <S.Btn onClick={() => setIsEditing(true)}>
+            <S.Btn onClick={() => setIsEditing(true)} data-tooltip="Editar">
               <img src={Edit} />
             </S.Btn>
-            <S.Btn onClick={() => removeContact()}>
+            <S.Btn onClick={() => removeContact()} data-tooltip="Remover">
               <img src={Remove} />
             </S.Btn>
           </>
         )}
       </span>
-      {/* colocar uma legenda no hover desses botões. Talvez usar o useHover */}
     </S.ContactCard>
   )
 }

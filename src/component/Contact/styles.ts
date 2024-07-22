@@ -12,6 +12,11 @@ export const ContactCard = styled.div`
   height: 88px;
   border-radius: 13px;
   border-bottom: 2px solid #2c3a47;
+
+  span {
+    position: relative;
+    display: inline-block;
+  }
 `
 export const FavIcon = styled.img`
   justify-self: center;
@@ -49,6 +54,28 @@ export const Btn = styled.button`
   :active {
     transform: scale(1.8);
     transition: all ease 0.2s;
+  }
+
+  &:hover::after {
+    content: attr(data-tooltip); /* Use the data-tooltip attribute */
+    position: absolute;
+    top: -30px; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #555;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 10;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
   }
 `
 export const FavBtn = styled(Btn)`
